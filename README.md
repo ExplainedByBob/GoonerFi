@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OF Virality DEX
+
+A decentralized exchange on Solana for leveraged long/short trading on OnlyFans creator virality. Trade with leverage (2x-50x) based on real-time virality metrics aggregated from internet engagement, revenue, and trending data.
+
+## Features
+
+- **Leveraged Trading**: Open long or short positions with 2x, 5x, 10x, 20x, or 50x leverage
+- **Virality Oracle**: Scans internet for engagement metrics, revenue data, and trending signals
+- **Position Management**: Track open positions with real-time PnL, liquidation prices, and position details
+- **Solana Wallet Integration**: Connect Phantom, Solflare, or Backpack wallets
+- **Jupiter Integration**: Use Jupiter aggregator for swaps and liquidity
+
+## Tech Stack
+
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Styling
+- **Solana Web3.js** - Solana blockchain interaction
+- **Solana Wallet Adapter** - Wallet connection management
+- **Jupiter Aggregator** - DEX aggregation and swap routing
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── OfMarkets.tsx       # Market listing and trading interface
+│   │   ├── PositionModal.tsx   # Modal for opening positions
+│   │   ├── PositionsList.tsx   # Display open positions
+│   │   └── JupiterSwap.tsx     # Jupiter swap integration
+│   ├── contexts/
+│   │   └── PositionContext.tsx # Global position state management
+│   ├── lib/
+│   │   ├── viralityOracle.ts   # Virality data aggregation
+│   │   └── positionManager.ts  # Position calculations and management
+│   ├── layout.tsx
+│   └── page.tsx
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+- Solana wallet (Phantom, Solflare, or Backpack)
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Virality Oracle
 
-## Learn More
+The `ViralityOracle` class aggregates virality metrics from multiple sources:
 
-To learn more about Next.js, take a look at the following resources:
+- **Engagement Metrics**: Total engagement, engagement rate, follower/subscriber counts
+- **Revenue Metrics**: Estimated revenue and revenue growth
+- **Trending Metrics**: Search volume, social mentions, composite trending score
+- **Platform-Specific**: Twitter/X, Instagram, TikTok, OnlyFans data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Currently uses mock data. In production, implement:
+- Twitter/X API integration
+- Instagram Graph API
+- TikTok API
+- Reddit API
+- Google Trends API
+- OnlyFans revenue estimation (if available)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Position Management
 
-## Deploy on Vercel
+Positions are managed with:
+- **Entry Price**: Price when position was opened
+- **Current Price**: Real-time price from virality oracle
+- **Liquidation Price**: Calculated based on leverage (position closes if price hits this)
+- **PnL**: Profit/Loss calculated from price movement
+- **Position Size**: Collateral × Leverage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Leverage & Liquidation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Long positions**: Liquidated when price drops to `entryPrice × (1 - 1/leverage)`
+- **Short positions**: Liquidated when price rises to `entryPrice × (1 + 1/leverage)`
+
+Example: 10x long at $10 entry → liquidated at $9
+
+## Next Steps for Production
+
+1. **On-Chain Implementation**: Deploy Solana programs for:
+   - Position management smart contracts
+   - Collateral vaults
+   - Oracle price feeds
+   - Liquidation mechanisms
+
+2. **Real Virality Data**: Implement actual API integrations:
+   - Social media APIs (Twitter, Instagram, TikTok)
+   - Google Trends API
+   - Revenue estimation algorithms
+   - Real-time data streaming
+
+3. **Jupiter Integration**: Connect to actual token markets:
+   - Create synthetic tokens for each creator
+   - Set up liquidity pools
+   - Integrate with Jupiter swap routes
+
+4. **Security**: Add:
+   - Position size limits
+   - Circuit breakers
+   - Oracle price validation
+   - Front-running protection
+
+## License
+
+MIT

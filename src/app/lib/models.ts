@@ -1,0 +1,465 @@
+/**
+ * Creator models database - Only creators with OnlyFans links
+ */
+
+export type CreatorModel = {
+  id: string;
+  name: string;
+  handle: string;
+  avatarUrl: string;
+  bio: string;
+  followers: string;
+  monthlyEarnings: string;
+  socials: {
+    twitter?: string;
+    instagram?: string;
+    tiktok?: string;
+    onlyfans: string; // Required
+  };
+};
+
+export const ALL_CREATORS: CreatorModel[] = [
+  {
+    id: "sophie-rain",
+    name: "Sophie Rain",
+    handle: "@sophieraiin",
+    avatarUrl: "https://randomuser.me/api/portraits/women/1.jpg",
+    bio: "Viral TikTok creator",
+    followers: "12.5M",
+    monthlyEarnings: "$2.1M",
+    socials: {
+      twitter: "https://twitter.com/sophieraiin",
+      instagram: "https://instagram.com/sophieraiin",
+      tiktok: "https://tiktok.com/@sophieraiin",
+      onlyfans: "https://onlyfans.com/sophieraiin",
+    },
+  },
+  {
+    id: "corinna-kopf",
+    name: "Corinna Kopf",
+    handle: "@corinnakopf",
+    avatarUrl: "https://randomuser.me/api/portraits/women/2.jpg",
+    bio: "Gaming influencer",
+    followers: "7.2M",
+    monthlyEarnings: "$1.8M",
+    socials: {
+      twitter: "https://twitter.com/CorinnaKopf",
+      instagram: "https://instagram.com/corinnakopf",
+      onlyfans: "https://onlyfans.com/corinnakopf",
+    },
+  },
+  {
+    id: "bhad-bhabie",
+    name: "Bhad Bhabie",
+    handle: "@bhadbhabie",
+    avatarUrl: "https://randomuser.me/api/portraits/women/3.jpg",
+    bio: "Rapper",
+    followers: "16.4M",
+    monthlyEarnings: "$1.7M",
+    socials: {
+      twitter: "https://twitter.com/BhadBhabie",
+      instagram: "https://instagram.com/bhadbhabie",
+      onlyfans: "https://onlyfans.com/bhadbhabie",
+    },
+  },
+  {
+    id: "belle-delphine",
+    name: "Belle Delphine",
+    handle: "@belledelphine",
+    avatarUrl: "https://randomuser.me/api/portraits/women/4.jpg",
+    bio: "Internet icon",
+    followers: "4.8M",
+    monthlyEarnings: "$1.5M",
+    socials: {
+      twitter: "https://twitter.com/bunnydelphine",
+      instagram: "https://instagram.com/belle.delphine",
+      onlyfans: "https://onlyfans.com/belledelphine",
+    },
+  },
+  {
+    id: "amouranth",
+    name: "Amouranth",
+    handle: "@amouranth",
+    avatarUrl: "https://randomuser.me/api/portraits/women/5.jpg",
+    bio: "Twitch streamer",
+    followers: "6.5M",
+    monthlyEarnings: "$1.5M",
+    socials: {
+      twitter: "https://twitter.com/Amouranth",
+      instagram: "https://instagram.com/amouranth",
+      onlyfans: "https://onlyfans.com/amouranth",
+    },
+  },
+  {
+    id: "blac-chyna",
+    name: "Blac Chyna",
+    handle: "@blacchyna",
+    avatarUrl: "https://randomuser.me/api/portraits/women/6.jpg",
+    bio: "Model",
+    followers: "16.5M",
+    monthlyEarnings: "$1.4M",
+    socials: {
+      instagram: "https://instagram.com/blacchyna",
+      onlyfans: "https://onlyfans.com/blacchyna",
+    },
+  },
+  {
+    id: "erica-mena",
+    name: "Erica Mena",
+    handle: "@ericamena",
+    avatarUrl: "https://randomuser.me/api/portraits/women/7.jpg",
+    bio: "Love & Hip Hop star",
+    followers: "5.2M",
+    monthlyEarnings: "$1.3M",
+    socials: {
+      instagram: "https://instagram.com/iamerica_mena",
+      onlyfans: "https://onlyfans.com/ericamena",
+    },
+  },
+  {
+    id: "jem-wolfie",
+    name: "Jem Wolfie",
+    handle: "@jemwolfie",
+    avatarUrl: "https://randomuser.me/api/portraits/women/9.jpg",
+    bio: "Fitness model",
+    followers: "2.8M",
+    monthlyEarnings: "$900K",
+    socials: {
+      instagram: "https://instagram.com/jemwolfie",
+      onlyfans: "https://onlyfans.com/jemwolfie",
+    },
+  },
+  {
+    id: "tana-mongeau",
+    name: "Tana Mongeau",
+    handle: "@tanamongeau",
+    avatarUrl: "https://randomuser.me/api/portraits/women/10.jpg",
+    bio: "YouTuber",
+    followers: "5.6M",
+    monthlyEarnings: "$850K",
+    socials: {
+      twitter: "https://twitter.com/tanamongeau",
+      instagram: "https://instagram.com/tanamongeau",
+      onlyfans: "https://onlyfans.com/tanamongeau",
+    },
+  },
+  {
+    id: "malu-trevejo",
+    name: "Malu Trevejo",
+    handle: "@malutrevejo",
+    avatarUrl: "https://randomuser.me/api/portraits/women/11.jpg",
+    bio: "Singer",
+    followers: "10.2M",
+    monthlyEarnings: "$800K",
+    socials: {
+      instagram: "https://instagram.com/malutrevejo",
+      onlyfans: "https://onlyfans.com/malutrevejo",
+    },
+  },
+  {
+    id: "francia-james",
+    name: "Francia James",
+    handle: "@franciajames",
+    avatarUrl: "https://randomuser.me/api/portraits/women/12.jpg",
+    bio: "Model",
+    followers: "8.1M",
+    monthlyEarnings: "$750K",
+    socials: {
+      instagram: "https://instagram.com/franciajames",
+      onlyfans: "https://onlyfans.com/franciajames",
+    },
+  },
+  {
+    id: "iggy-azalea",
+    name: "Iggy Azalea",
+    handle: "@iggyazalea",
+    avatarUrl: "https://randomuser.me/api/portraits/women/13.jpg",
+    bio: "Rapper",
+    followers: "18.2M",
+    monthlyEarnings: "$700K",
+    socials: {
+      twitter: "https://twitter.com/IGGYAZALEA",
+      instagram: "https://instagram.com/iggyazalea",
+      onlyfans: "https://onlyfans.com/iggyazalea",
+    },
+  },
+  {
+    id: "sophie-dee",
+    name: "Sophie Dee",
+    handle: "@sophiedee",
+    avatarUrl: "https://randomuser.me/api/portraits/women/15.jpg",
+    bio: "Content creator",
+    followers: "3.2M",
+    monthlyEarnings: "$600K",
+    socials: {
+      twitter: "https://twitter.com/sophiedee",
+      instagram: "https://instagram.com/sophiedee",
+      onlyfans: "https://onlyfans.com/sophiedee",
+    },
+  },
+  {
+    id: "tyga",
+    name: "Tyga",
+    handle: "@tyga",
+    avatarUrl: "https://randomuser.me/api/portraits/men/1.jpg",
+    bio: "Rapper",
+    followers: "12.6M",
+    monthlyEarnings: "$550K",
+    socials: {
+      twitter: "https://twitter.com/Tyga",
+      instagram: "https://instagram.com/tyga",
+      onlyfans: "https://onlyfans.com/tyga",
+    },
+  },
+  {
+    id: "denise-richards",
+    name: "Denise Richards",
+    handle: "@deniserichards",
+    avatarUrl: "https://randomuser.me/api/portraits/women/17.jpg",
+    bio: "Actress",
+    followers: "1.4M",
+    monthlyEarnings: "$450K",
+    socials: {
+      instagram: "https://instagram.com/deniserichards",
+      onlyfans: "https://onlyfans.com/deniserichards",
+    },
+  },
+  {
+    id: "carmen-electra",
+    name: "Carmen Electra",
+    handle: "@carmenelectra",
+    avatarUrl: "https://randomuser.me/api/portraits/women/18.jpg",
+    bio: "Baywatch star",
+    followers: "1.3M",
+    monthlyEarnings: "$400K",
+    socials: {
+      instagram: "https://instagram.com/carmenelectra",
+      onlyfans: "https://onlyfans.com/carmenelectra",
+    },
+  },
+  {
+    id: "larsa-pippen",
+    name: "Larsa Pippen",
+    handle: "@larsapippen",
+    avatarUrl: "https://randomuser.me/api/portraits/women/19.jpg",
+    bio: "Reality star",
+    followers: "4.8M",
+    monthlyEarnings: "$380K",
+    socials: {
+      instagram: "https://instagram.com/larsapippen",
+      onlyfans: "https://onlyfans.com/larsapippen",
+    },
+  },
+  {
+    id: "amber-rose",
+    name: "Amber Rose",
+    handle: "@amberrose",
+    avatarUrl: "https://randomuser.me/api/portraits/women/21.jpg",
+    bio: "Model",
+    followers: "21.5M",
+    monthlyEarnings: "$340K",
+    socials: {
+      instagram: "https://instagram.com/amberrose",
+      onlyfans: "https://onlyfans.com/amberrose",
+    },
+  },
+  {
+    id: "riley-reid",
+    name: "Riley Reid",
+    handle: "@rileyreid",
+    avatarUrl: "https://randomuser.me/api/portraits/women/24.jpg",
+    bio: "Performer",
+    followers: "8.4M",
+    monthlyEarnings: "$280K",
+    socials: {
+      twitter: "https://twitter.com/RileyReidx3",
+      onlyfans: "https://onlyfans.com/rileyreid",
+    },
+  },
+  {
+    id: "mia-malkova",
+    name: "Mia Malkova",
+    handle: "@miamalkova",
+    avatarUrl: "https://randomuser.me/api/portraits/women/25.jpg",
+    bio: "Streamer",
+    followers: "12.5M",
+    monthlyEarnings: "$260K",
+    socials: {
+      twitter: "https://twitter.com/MiaMalkova",
+      onlyfans: "https://onlyfans.com/miamalkova",
+    },
+  },
+  {
+    id: "dani-daniels",
+    name: "Dani Daniels",
+    handle: "@akadanidaniels",
+    avatarUrl: "https://randomuser.me/api/portraits/women/26.jpg",
+    bio: "Artist",
+    followers: "3.2M",
+    monthlyEarnings: "$240K",
+    socials: {
+      twitter: "https://twitter.com/akaDaniDaniels",
+      onlyfans: "https://onlyfans.com/akadanidaniels",
+    },
+  },
+  {
+    id: "abella-danger",
+    name: "Abella Danger",
+    handle: "@abelladanger",
+    avatarUrl: "https://randomuser.me/api/portraits/women/27.jpg",
+    bio: "AVN winner",
+    followers: "9.2M",
+    monthlyEarnings: "$220K",
+    socials: {
+      instagram: "https://instagram.com/dangershewrote",
+      onlyfans: "https://onlyfans.com/abelladanger",
+    },
+  },
+  {
+    id: "angela-white",
+    name: "Angela White",
+    handle: "@angelawhite",
+    avatarUrl: "https://randomuser.me/api/portraits/women/29.jpg",
+    bio: "Director",
+    followers: "11.2M",
+    monthlyEarnings: "$190K",
+    socials: {
+      twitter: "https://twitter.com/ANGELAWHITE",
+      onlyfans: "https://onlyfans.com/angelawhite",
+    },
+  },
+  {
+    id: "autumn-falls",
+    name: "Autumn Falls",
+    handle: "@autumnfalls",
+    avatarUrl: "https://randomuser.me/api/portraits/women/30.jpg",
+    bio: "Rising star",
+    followers: "6.5M",
+    monthlyEarnings: "$140K",
+    socials: {
+      instagram: "https://instagram.com/autumnfallsx",
+      onlyfans: "https://onlyfans.com/autumnfalls",
+    },
+  },
+  {
+    id: "lena-the-plug",
+    name: "Lena The Plug",
+    handle: "@lenatheplug",
+    avatarUrl: "https://randomuser.me/api/portraits/women/31.jpg",
+    bio: "YouTuber",
+    followers: "1.8M",
+    monthlyEarnings: "$135K",
+    socials: {
+      twitter: "https://twitter.com/lenatheplug",
+      onlyfans: "https://onlyfans.com/lenatheplug",
+    },
+  },
+  {
+    id: "kazumi",
+    name: "Kazumi",
+    handle: "@kazumi",
+    avatarUrl: "https://randomuser.me/api/portraits/women/32.jpg",
+    bio: "Podcaster",
+    followers: "2.6M",
+    monthlyEarnings: "$95K",
+    socials: {
+      instagram: "https://instagram.com/kazumi",
+      onlyfans: "https://onlyfans.com/kazumi",
+    },
+  },
+  {
+    id: "violet-myers",
+    name: "Violet Myers",
+    handle: "@violetmyers",
+    avatarUrl: "https://randomuser.me/api/portraits/women/33.jpg",
+    bio: "Gamer",
+    followers: "3.4M",
+    monthlyEarnings: "$90K",
+    socials: {
+      twitter: "https://twitter.com/violetsaucy",
+      onlyfans: "https://onlyfans.com/violetmyers",
+    },
+  },
+  {
+    id: "emily-willis",
+    name: "Emily Willis",
+    handle: "@emilywillis",
+    avatarUrl: "https://randomuser.me/api/portraits/women/34.jpg",
+    bio: "AVN winner",
+    followers: "5.8M",
+    monthlyEarnings: "$82K",
+    socials: {
+      twitter: "https://twitter.com/emilywillisxxx",
+      onlyfans: "https://onlyfans.com/emilywillis",
+    },
+  },
+  {
+    id: "valentina-nappi",
+    name: "Valentina Nappi",
+    handle: "@valentinanappi",
+    avatarUrl: "https://randomuser.me/api/portraits/women/35.jpg",
+    bio: "Italian star",
+    followers: "8.7M",
+    monthlyEarnings: "$75K",
+    socials: {
+      twitter: "https://twitter.com/ValeNappi",
+      onlyfans: "https://onlyfans.com/valentinanappi",
+    },
+  },
+  {
+    id: "adriana-chechik",
+    name: "Adriana Chechik",
+    handle: "@adrianachechik",
+    avatarUrl: "https://randomuser.me/api/portraits/women/36.jpg",
+    bio: "Twitch streamer",
+    followers: "4.2M",
+    monthlyEarnings: "$70K",
+    socials: {
+      twitter: "https://twitter.com/adrianachechik",
+      onlyfans: "https://onlyfans.com/adrianachechik",
+    },
+  },
+  {
+    id: "asa-akira",
+    name: "Asa Akira",
+    handle: "@asaakira",
+    avatarUrl: "https://randomuser.me/api/portraits/women/37.jpg",
+    bio: "Hall of Fame",
+    followers: "2.8M",
+    monthlyEarnings: "$68K",
+    socials: {
+      twitter: "https://twitter.com/AsaAkira",
+      onlyfans: "https://onlyfans.com/asaakira",
+    },
+  },
+  {
+    id: "eva-elfie",
+    name: "Eva Elfie",
+    handle: "@evaelfie",
+    avatarUrl: "https://randomuser.me/api/portraits/women/38.jpg",
+    bio: "Top searched",
+    followers: "9.1M",
+    monthlyEarnings: "$65K",
+    socials: {
+      instagram: "https://instagram.com/eva.elfie",
+      onlyfans: "https://onlyfans.com/evaelfie",
+    },
+  },
+  {
+    id: "alexis-texas",
+    name: "Alexis Texas",
+    handle: "@alexistexas",
+    avatarUrl: "https://randomuser.me/api/portraits/women/39.jpg",
+    bio: "Hall of Fame",
+    followers: "3.5M",
+    monthlyEarnings: "$62K",
+    socials: {
+      twitter: "https://twitter.com/Alexis_Texas",
+      onlyfans: "https://onlyfans.com/alexistexas",
+    },
+  },
+];
+
+export function getCreatorById(id: string): CreatorModel | undefined {
+  return ALL_CREATORS.find((c) => c.id === id);
+}
