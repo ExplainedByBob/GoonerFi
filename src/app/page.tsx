@@ -85,7 +85,31 @@ function HomePage() {
           <Link href="/" className="flex items-center gap-2">
             <GoonerFiLogo className="h-10" />
           </Link>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
+            <a
+              href="https://x.com/i/communities/2016609588909396229"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg border border-[#1e3a5f] bg-[#0f2140]/50 px-3 py-1.5 text-sm text-blue-200/80 hover:bg-[#1e3a5f] hover:text-white transition"
+            >
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              Community
+            </a>
+            <div className="hidden md:flex items-center gap-2 rounded-lg border border-[#1e3a5f] bg-[#0f2140]/50 px-3 py-1.5">
+              <span className="text-xs text-blue-300/50">CA:</span>
+              <code className="text-xs text-blue-200/80 font-mono">3Mi9K...pump</code>
+              <button
+                onClick={() => navigator.clipboard.writeText("3Mi9K5UpaXbH9rAW4JDjWAx2X6sCvwB5mtqYY6YVpump")}
+                className="text-blue-300/50 hover:text-white transition"
+                title="Copy contract address"
+              >
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+            </div>
             <Navigation />
             <WalletMultiButton />
           </div>
